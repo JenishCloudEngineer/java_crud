@@ -66,4 +66,4 @@ server {
     }
 }
 
-This allows you to access the application via http://localhost instead of specifying the port.
+This allows you to access the application.
