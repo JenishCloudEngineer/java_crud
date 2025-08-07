@@ -17,19 +17,19 @@ public class UIRecordController {
     public UIRecordController(RecordService recordService) {
         this.recordService = recordService;
     }
-
+    
     // ✅ List all records
     @GetMapping
     public String listRecords(Model model) {
         model.addAttribute("records", recordService.getAll());
-        return "index"; // maps to index.html
+        return "ui/index"; // maps to index.html
     }
 
     // ✅ Show form to create new record
     @GetMapping("/new")
     public String createForm(Model model) {
         model.addAttribute("record", new Record());
-        return "form"; // maps to form.html
+        return "ui/form"; // maps to form.html
     }
 
     // ✅ Show form to edit an existing record
@@ -38,7 +38,7 @@ public class UIRecordController {
         Optional<Record> record = recordService.getById(id);
         if (record.isPresent()) {
             model.addAttribute("record", record.get());
-            return "form"; // maps to form.html
+            return "ui/form"; // maps to form.html
         } else {
             return "redirect:/ui/records";
         }
