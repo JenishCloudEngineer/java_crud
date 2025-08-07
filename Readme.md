@@ -21,7 +21,7 @@ Technologies Used:
 Setup Instructions:
 
 1. Clone the Project
-$ git clone https://github.com/your-username/java_crud.git
+$ git clone https://github.com/JenishCloudEngineer/java_crud.git
 $ cd java_crud
 
 2. Configure Database MYSQL :
