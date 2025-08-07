@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Record List</title>
+</head>
+<body>
+<h1>All Records</h1>
+
+<a th:href="@{/ui/records/new}">Add New Record</a>
+<br><br>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Data</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="record : ${records}">
+        <td th:text="${record.id}"></td>
+        <td th:text="${record.data}"></td>
+        <td>
+            <a th:href="@{'/ui/records/edit/' + ${record.id}}">Edit</a>
+            |
+            <a th:href="@{'/ui/records/delete/' + ${record.id}}">Delete</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
